@@ -398,9 +398,38 @@
     <article id="post-Python修改pip源为国内数据源方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/04/06/Python%E4%BF%AE%E6%94%B9pip%E6%BA%90%E4%B8%BA%E5%9B%BD%E5%86%85%E6%95%B0%E6%8D%AE%E6%BA%90%E6%96%B9%E6%B3%95/" target="_blank">Python创建虚拟环境，修改pip源</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/04/06/Python%E4%BF%AE%E6%94%B9pip%E6%BA%90%E4%B8%BA%E5%9B%BD%E5%86%85%E6%95%B0%E6%8D%AE%E6%BA%90%E6%96%B9%E6%B3%95/" class="archive-article-date">
+        <time datetime="2021-04-06T06:15:42.387Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-06</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Python修改pip源为国内数据源方法"><a href="#Python修改pip源为国内数据源方法" class="headerlink" title="Python修改pip源为国内数据源方法"></a>Python修改pip源为国内数据源方法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清华源</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或：</span></span><br><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="comment"># 腾讯源</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url http://mirrors.cloud.tencent.com/pypi/simple</span><br><span class="line"><span class="comment"># 豆瓣源</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url http://pypi.douban.com/simple/</span><br><span class="line"><span class="comment"># 中国科技大学（推荐）</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url http://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
+    <h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装virtualenv</span></span><br><span class="line">pip install virtualenv</span><br><span class="line"><span class="comment">#创建虚拟环境</span></span><br><span class="line">virtualenv 环境名称 --python=python3<span class="number">.6</span></span><br><span class="line">virtualenv 环境名称 --python=‘C:\python.exe’</span><br><span class="line"><span class="comment">#注意：创建文件夹，防治所有环境</span></span><br><span class="line">cd 环境名称</span><br><span class="line"><span class="comment">#激活虚拟环境</span></span><br><span class="line">cd Scripts <span class="comment">#进入Scripts目录</span></span><br><span class="line">activate	<span class="comment">#激活</span></span><br><span class="line">deactivate<span class="comment">#退出虚拟环境</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>###修改pip数据源</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清华源</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或：</span></span><br><span class="line"><span class="comment"># 阿里源</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url https://mirrors.aliyun.com/pypi/simple/</span><br><span class="line"><span class="comment"># 腾讯源</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url http://mirrors.cloud.tencent.com/pypi/simple</span><br><span class="line"><span class="comment"># 豆瓣源</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url http://pypi.douban.com/simple/</span><br><span class="line"><span class="comment"># 中国科技大学（推荐）</span></span><br><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url http://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
 
 
     
@@ -447,7 +476,7 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python搭建虚拟环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -455,7 +484,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2021/04/04/hello-world/" target="_blank">Hello World</a>
+	  <a class="article-title" href="/2021/04/04/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" target="_blank">Hello World</a>
   
     </h1>
   
@@ -463,7 +492,7 @@
 
   
   
-<a href="/2021/04/04/hello-world/" class="archive-article-date">
+<a href="/2021/04/04/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="archive-article-date">
         <time datetime="2021-04-04T11:48:19.632Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-04</time>
 </a>
 
@@ -504,7 +533,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2021/04/04/hello-world/">展开全文 >></a>
+      <a class="article-more-a" href="/2021/04/04/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">展开全文 >></a>
     </p>
     
 
